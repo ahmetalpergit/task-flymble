@@ -71,7 +71,7 @@ function Cart() {
             }
             {hotels && hotels.length > 0 &&
                 <div className="cart__total">
-                    <h1 className="cart__total__value">{total}€</h1>
+                    <h1 className="cart__total__value">Total: {total}€</h1>
                     <Link to="/payment" className="cart__total__link">BUY</Link>
                 </div>
             }

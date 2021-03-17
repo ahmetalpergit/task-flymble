@@ -319,7 +319,7 @@ button {
   font-family: inherit;
   text-decoration: none;
   text-align: center;
-  min-width: 8rem;
+  min-width: 12rem;
   font-weight: 700;
   border-radius: 5px;
   color: #f8f9fe;
@@ -380,7 +380,7 @@ button {
   font-family: inherit;
   text-decoration: none;
   text-align: center;
-  min-width: 8rem;
+  min-width: 25rem;
   font-weight: 700;
   border-radius: 5px;
   color: #f8f9fe;
@@ -457,4 +457,108 @@ button {
 
 #shipping {
   font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 550px) {
+  .hotel {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hotel__img {
+    width: 100%;
+  }
+  .hotel__content {
+    position: relative;
+  }
+  .hotel__content__info {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .hotel__content__info__controls {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .hotel__content__delete {
+    top: auto;
+    bottom: 0.5rem;
+  }
+  .hotel__content__delete svg {
+    width: 2.5rem;
+  }
+  .skeleton {
+    width: 100%;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .skeleton__img {
+    width: 100%;
+    height: 30vh;
+  }
+  .skeleton__text-box {
+    width: 100%;
+  }
+  .skeleton__text-box__lines {
+    margin-bottom: 1.5rem;
+  }
+  .skeleton__text-box__buttons {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media (max-width: 490px) {
+  .payment {
+    width: 100%;
+  }
+  .payment__description {
+    margin: 0.5rem 0.5rem 1.5rem;
+  }
+  .form {
+    padding: 2rem;
+    width: 100%;
+  }
+  .form__input-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .form__input-box label {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  .form__input-box input, .form__input-box select {
+    width: 100%;
+    min-width: auto;
+  }
+  .form__btn {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .hotel__content__info__controls {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .hotel__content__info__controls__slider {
+    margin-bottom: 1rem;
+  }
 }
