@@ -9,6 +9,9 @@ function Cart() {
     //Total trip cost
     const [total, setTotal] = useState(0);
 
+    //Handling fetch errors
+    const [errorMessage, setErrorMessage] = useState('');
+
 
     useEffect(() => {
         const fetchHotels = async () => {
@@ -18,7 +21,7 @@ function Cart() {
                 setHotels(data);
                 return data;
             } catch (err) {
-                console.error(err);
+                setErrorMessage(`${err.message}: Please try again later!`)
             }
         }
         fetchHotels();
@@ -49,9 +52,14 @@ function Cart() {
 
     return (
         <div className="cart">
-            <h1 className="cart__heading">Welcome to Flymble Cart!</h1>
-            <p className="cart__description">Please book your hotels and finalize your purchase here.</p>
-
+            {errorMessage ? 
+                <h1 style={{marginTop: '2rem'}}>{errorMessage}</h1>
+                : 
+                <>
+                <h1 className="cart__heading">Welcome to Flymble Cart!</h1>
+                <p className="cart__description">Please book your hotels and finalize your purchase here.</p>
+                </>
+            }
             {hotels && 
                 hotels.map(el => {
                     return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} deletion={handleDelete} handleTotal={handleTotal}/>
