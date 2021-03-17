@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Hotel from './Hotel';
+import Skeleton from './Skeleton';
 
 function Cart() {
 
@@ -60,10 +61,12 @@ function Cart() {
                 <p className="cart__description">Please book your hotels and finalize your purchase here.</p>
                 </>
             }
-            {hotels && 
+            {hotels ? //Load when hotels are ready
                 hotels.map(el => {
                     return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} deletion={handleDelete} handleTotal={handleTotal}/>
                 })
+            :   //Load Skeleton component until hotels are fetched
+                <Skeleton />
             }
             {hotels && hotels.length > 0 &&
                 <div className="cart__total">

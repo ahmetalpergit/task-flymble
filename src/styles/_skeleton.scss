@@ -1,0 +1,67 @@
+.skeleton {
+    display: flex;
+    width: 57rem;
+    height: 19rem;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    opacity: 0.3;
+
+    &__img {
+        width: 25rem;
+        height: 100%;
+        background-color: rgba($color-line, 0.5);
+    }
+
+    &__text-box {
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+        width: calc(100% - 15rem);
+
+        &__line {
+            height: 1rem;
+            width: 80%;
+            background-color: rgba($color-line, 0.5);
+
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+
+            &--1 {
+                width: 60%;
+            }
+
+            &--2 {
+                width: 90%;
+            }
+
+            &--3 {
+                width: 75%;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            height: auto;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            &__button {
+                height: 3rem;
+                width: 3rem;
+                background-color: rgba($color-line, 0.5);
+
+                &--1 {
+
+                }
+
+                &--2 {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
