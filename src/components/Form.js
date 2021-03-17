@@ -2,6 +2,15 @@ import Input from './Input';
 
 function Form() {
 
+    const checkFormValidation = () => {
+        const  formBtn = document.querySelector('.form__btn');
+        const formInputs = Array.from(document.querySelectorAll('.form input'));
+        const allValid = formInputs.every(el => el.validity.valid);
+
+        if (allValid) formBtn.removeAttribute('disabled');
+        else formBtn.setAttribute('disabled', '');
+    }
+
     return (
         <form className="form" onSubmit={(e) => {e.preventDefault(); return false;}}>
             <Input 
@@ -13,6 +22,7 @@ function Form() {
                 require={true}
                 type="text"
                 minLength="3"
+                check={checkFormValidation}
             />
             <Input 
                 inputFor="inputAddress"
@@ -22,6 +32,7 @@ function Form() {
                 placeholder=" "
                 require={true}
                 type="text"
+                check={checkFormValidation}
             />
             <Input 
                 inputFor="inputNumber"
@@ -32,6 +43,7 @@ function Form() {
                 require={false}
                 type="tel"
                 pattern="[0-9]{9}"
+                check={checkFormValidation}
             />
             <Input 
                 inputFor="inputMail"
@@ -42,6 +54,7 @@ function Form() {
                 require={true}
                 type="email"
                 pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                check={checkFormValidation}
             />
             <div className="form__input-box">
                 <label htmlFor="selectShipping">Shipping options</label>
