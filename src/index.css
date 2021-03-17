@@ -330,3 +330,26 @@ button {
 .cart__total__link:hover {
   background-color: #0aad8a;
 }
+
+.payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.payment__heading {
+  font-family: "Lato", sans-serif;
+}
+
+.payment__description {
+  font-family: "Lato", sans-serif;
+  margin: 0.5rem 0 1.5rem;
+}

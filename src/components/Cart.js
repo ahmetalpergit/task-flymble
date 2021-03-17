@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Hotel from './Hotel';
 import Skeleton from './Skeleton';
 
@@ -71,7 +72,7 @@ function Cart() {
             {hotels && hotels.length > 0 &&
                 <div className="cart__total">
                     <h1 className="cart__total__value">{total}€</h1>
-                    <button className="cart__total__link">BUY</button>
+                    <Link to="/payment" className="cart__total__link">BUY</Link>
                 </div>
             }
         </div>

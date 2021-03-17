@@ -1,0 +1,15 @@
+.payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+    &__heading {
+        font-family: $font-lato;
+    }
+
+    &__description {
+        font-family: $font-lato;
+        margin: 0.5rem 0 1.5rem;
+    }
+}
