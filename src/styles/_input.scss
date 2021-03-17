@@ -1,0 +1,43 @@
+.form__input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    & label {
+        margin-right: 3rem;
+    }
+
+    & input, & select {
+        padding: 0.7rem;
+        min-width: 25rem;
+        border-radius: 5px;
+        border: 1px solid rgba($color-line, 0.5);
+        transition: all 0.2s;
+        font-family: $font-roboto;
+
+        &:focus {
+            outline: $color-blue;
+            border: 1px solid $color-blue;
+        }
+
+        &:not(:placeholder-shown):not(:focus):invalid {
+            outline: orangered;
+            border: 1px solid orangered;
+        }
+
+        &::placeholder {
+            text-align: right;
+            font-family: $font-roboto;
+            font-size: 1.2rem;
+        }
+    }
+
+    & input:not(:placeholder-shown):not(:focus):valid, & select:not(:placeholder-shown):not(:focus):valid {
+        border: 1px solid $color-green;
+    }
+}
+
+#shipping {
+    font-family: $font-roboto;
+}

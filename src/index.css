@@ -353,3 +353,108 @@ button {
   font-family: "Lato", sans-serif;
   margin: 0.5rem 0 1.5rem;
 }
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3rem;
+  background-color: white;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  border-radius: 5px;
+  margin: auto;
+}
+
+.form__btn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #13c29b;
+  border: none;
+  font-size: inherit;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  min-width: 8rem;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #f8f9fe;
+}
+
+.form__btn:disabled {
+  background-color: #ccc;
+}
+
+.form__input-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.form__input-box label {
+  margin-right: 3rem;
+}
+
+.form__input-box input, .form__input-box select {
+  padding: 0.7rem;
+  min-width: 25rem;
+  border-radius: 5px;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-family: "Roboto", sans-serif;
+}
+
+.form__input-box input:focus, .form__input-box select:focus {
+  outline: #4860ff;
+  border: 1px solid #4860ff;
+}
+
+.form__input-box input:not(:placeholder-shown):not(:focus):invalid, .form__input-box select:not(:placeholder-shown):not(:focus):invalid {
+  outline: orangered;
+  border: 1px solid orangered;
+}
+
+.form__input-box input::-webkit-input-placeholder, .form__input-box select::-webkit-input-placeholder {
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.form__input-box input:-ms-input-placeholder, .form__input-box select:-ms-input-placeholder {
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.form__input-box input::-ms-input-placeholder, .form__input-box select::-ms-input-placeholder {
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.form__input-box input::placeholder, .form__input-box select::placeholder {
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.form__input-box input:not(:placeholder-shown):not(:focus):valid, .form__input-box select:not(:placeholder-shown):not(:focus):valid {
+  border: 1px solid #13c29b;
+}
+
+#shipping {
+  font-family: "Roboto", sans-serif;
+}
