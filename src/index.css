@@ -211,3 +211,43 @@ button {
   font-family: "Lato", sans-serif;
   margin: 0.5rem 0 1.5rem;
 }
+
+.cart__total {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.cart__total__value {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.cart__total__link {
+  background-color: #13c29b;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  min-width: 8rem;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #f8f9fe;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.cart__total__link:hover {
+  background-color: #0aad8a;
+}

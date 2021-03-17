@@ -6,6 +6,10 @@ function Cart() {
     //Fetch data
     const [hotels, setHotels] = useState('');
 
+    //Total trip cost
+    const [total, setTotal] = useState(0);
+
+
     useEffect(() => {
         const fetchHotels = async () => {
             try {
@@ -29,6 +33,12 @@ function Cart() {
                 hotels.map(el => {
                     return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} />
                 })
+            }
+            {hotels && hotels.length > 0 &&
+                <div className="cart__total">
+                    <h1 className="cart__total__value">{total}€</h1>
+                    <button className="cart__total__link">BUY</button>
+                </div>
             }
         </div>
     )
