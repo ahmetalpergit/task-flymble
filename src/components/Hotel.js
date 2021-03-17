@@ -36,7 +36,7 @@ function Hotel({
                         <input className="hotel__content__info__controls__slider" type="range" min="1" max="100" value={count} onChange={(e) => setCount(e.target.value)} />
                         {/* Disabling the button at 1 for better user experience - they can delete instead of 0 */}
                         <div className="hotel__content__info__controls__buttons">
-                            {count === 1 ? <button disabled className="hotel__content__info__controls__btn hotel__content__info__controls__btn--decrease">-</button> : <button className="hotel__content__info__controls__btn hotel__content__info__controls__btn--decrease" onClick={() => setCount(count => --count)}>-</button>}
+                            {count === 1 || count === 0 ? <button disabled className="hotel__content__info__controls__btn hotel__content__info__controls__btn--decrease">-</button> : <button className="hotel__content__info__controls__btn hotel__content__info__controls__btn--decrease" onClick={() => setCount(count => --count)}>-</button>}
                             <p className="hotel__content__info__controls--count">{count}</p>
                             {count === 14 ? <button disabled className="hotel__content__info__controls__btn hotel__content__info__controls__btn--increase">+</button> : <button className="hotel__content__info__controls__btn hotel__content__info__controls__btn--increase" onClick={() => setCount(count => ++count)}>+</button>}
                         </div>
