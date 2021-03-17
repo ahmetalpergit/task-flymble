@@ -1,0 +1,121 @@
+.hotel {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 1px solid rgba($color-line, 05);
+    overflow: hidden;
+
+    &__img {
+        width: 25rem;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+
+        &__delete {
+            position: absolute;
+            top: 1.2rem;
+            right: 1rem;
+            padding: 0.5rem;
+            border: none;
+            background-color: transparent;
+
+            &:hover > svg {
+                fill: $color-dark;
+            }
+
+            & svg {
+                width: 2rem;
+                height: auto;
+                fill: $color-line;
+                transition: all 0.2s;
+            }
+        }
+
+        &__text {
+            max-width: 93%;
+
+            &__title {
+                margin: 0.5rem 0;
+            }
+
+            &__description {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            &__price {
+                font-weight: $font-light;
+            }
+
+            &__controls {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+                width: 100%;
+                justify-content: flex-end;
+
+                &__slider {
+                    margin-right: 2rem;
+                    width: 100%;
+                }
+
+                &__buttons {
+                    display: flex;
+                }
+
+                &__btn {
+                    border: none;
+                    background-color: $color-blue;
+                    color: white;
+                    font-family: inherit;
+                    font-weight: $font-bold;
+                    font-size: 2rem;
+                    width: 3rem;
+                    height: 3rem;
+                    transition: all 0.1s;
+
+                    &--decrease {
+                        border-radius: 5px 0 0 5px;
+                    }
+
+                    &--increase {
+                        border-radius: 0 5px 5px 0;
+                    }
+
+                    &:hover {
+                        background-color: $color-blue-dark;
+                    }
+
+                    &:disabled {
+                        background-color: $color-line;
+                    }
+                }
+
+                &--count {
+                    display: grid;
+                    width: 3rem;
+                    height: 3rem;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: $font-bold;
+                    border-top: 1px solid rgba($color-line, 0.5);
+                    border-bottom: 1px solid rgba($color-line, 0.5);
+                }
+            }
+        }
+    }
+}
