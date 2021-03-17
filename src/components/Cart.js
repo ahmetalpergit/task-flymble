@@ -24,9 +24,27 @@ function Cart() {
         fetchHotels();
     }, [])
 
+    //Get initial total cost based on default fetch
+    useEffect(() => {
+        setTotal(hotels ? hotels.reduce((acc, cur) => acc += +cur.total, 0): 0)
+    }, [hotels])
+
     //Delete Hotels
     const handleDelete = (deleteID) => {
         setHotels(hotels => hotels.filter(el => el.id !== deleteID));
+    }
+    
+    //Recalculate cost based on changed child Hotel components
+    const handleTotal = (id, total) => {
+        //Find the hotel we'll be adding total to
+        const currentHotel = hotels.find(el => el.id === id);
+        //add 'total' property on the hotel object to calculate total cost of trip
+        currentHotel.total = total;
+        setTotal(calculateTotal());
+    }
+    //Utility function to sum the totals from the Hotel obj total property
+    const calculateTotal = () => {
+        return hotels.reduce((acc, cur) => acc += +cur.total, 0)
     }
 
     return (
@@ -36,7 +54,7 @@ function Cart() {
 
             {hotels && 
                 hotels.map(el => {
-                    return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} deletion={handleDelete}/>
+                    return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} deletion={handleDelete} handleTotal={handleTotal}/>
                 })
             }
             {hotels && hotels.length > 0 &&

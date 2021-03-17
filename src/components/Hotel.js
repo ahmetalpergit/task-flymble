@@ -6,7 +6,8 @@ function Hotel({
     subtitle,
     imgUrl,
     price,
-    deletion
+    deletion,
+    handleTotal
 }) {
 
     //Nights of stay
@@ -14,6 +15,11 @@ function Hotel({
 
     //Current cost of this hotel reservation
     let total = count * +price;
+
+    //Change total value for the Hotel depending on count state
+    useEffect(() => {
+        handleTotal(id, total)
+    }, [id, total, handleTotal])
 
     return (
         <article className="hotel">
