@@ -24,6 +24,11 @@ function Cart() {
         fetchHotels();
     }, [])
 
+    //Delete Hotels
+    const handleDelete = (deleteID) => {
+        setHotels(hotels => hotels.filter(el => el.id !== deleteID));
+    }
+
     return (
         <div className="cart">
             <h1 className="cart__heading">Welcome to Flymble Cart!</h1>
@@ -31,7 +36,7 @@ function Cart() {
 
             {hotels && 
                 hotels.map(el => {
-                    return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} />
+                    return <Hotel key={'key' + el.id} id={el.id} name={el.name} subtitle={el.subtitle} imgUrl={el.image} price={el.price} deletion={handleDelete}/>
                 })
             }
             {hotels && hotels.length > 0 &&
