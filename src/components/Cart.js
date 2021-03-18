@@ -20,6 +20,7 @@ function Cart() {
             try {
                 const request = await fetch('https://604fca60c20143001744dc61.mockapi.io/hotels');
                 const data = await request.json();
+                data.forEach(el => el.image = 'https://picsum.photos/600/400')
                 setHotels(data);
                 return data;
             } catch (err) {
